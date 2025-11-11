@@ -1,178 +1,1057 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>A Renewed Partnership: Stewardship.IS & Acadia Mineral Partners</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter','sans-serif'] },
-          colors: {
-            'amp-green': '#157a48',
-            'sis-dark': '#212121',
-            'sis-blue': '#1d4ed8'
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Renewed Partnership: Stewardship.IS & Acadia Mineral Partners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'fep-gray': '#8a8d8f',
+                        'sis-dark': '#212121',
+                        'sis-blue': '#1d4ed8',
+                    }
+                },
+            },
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'sans-serif';
         }
-      }
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family:'Inter','sans-serif'; }
-    .ph-icon { fill:none; stroke-width:1.5; stroke:currentColor; color:#1d4ed8; }
-    .gauge-ring-bg { stroke:#4b5563; }
-    .gauge-ring-progress { stroke:#10b981; stroke-dasharray:125.66; stroke-dashoffset:31.415; }
-    .progress-bar { height:1rem; background:#e5e7eb; border-radius:9999px; overflow:hidden; border:1px solid #d1d5db; }
-    .progress-bar-fill { height:100%; background:#1d4ed8; display:flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:500; color:#fff; }
-    .carousel-container { position:relative; width:100%; overflow:hidden; border-radius:.5rem; }
-    .carousel-track { display:flex; transition:transform .6s cubic-bezier(.4,0,.2,1); }
-    .carousel-slide { min-width:100%; display:flex; justify-content:center; align-items:center; opacity:0; transform:scale(.95); transition:opacity .6s, transform .6s; }
-    .carousel-slide.active { opacity:1; transform:scale(1); }
-    .carousel-slide img { max-width:100%; height:auto; border-radius:.5rem; box-shadow:0 10px 25px rgba(0,0,0,.1); }
-    .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.95); border:none; width:48px; height:48px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:.3s; box-shadow:0 4px 12px rgba(0,0,0,.15); z-index:10; }
-    .carousel-btn:hover { background:#fff; box-shadow:0 6px 16px rgba(0,0,0,.2); transform:translateY(-50%) scale(1.1); }
-    .carousel-btn-prev { left:20px; }
-    .carousel-btn-next { right:20px; }
-    .carousel-dots { display:flex; justify-content:center; gap:8px; margin-top:20px; }
-    .carousel-dot { width:10px; height:10px; border-radius:50%; background:#d1d5db; cursor:pointer; transition:.3s; }
-    .carousel-dot.active { background:#1d4ed8; width:24px; border-radius:5px; }
-    .carousel-counter { text-align:center; margin-top:12px; font-size:.875rem; color:#6b7280; font-weight:500; }
-    .video-container { position:relative; width:100%; background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); border-radius:1rem; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,.15); }
-    .video-wrapper { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; }
-    .video-wrapper video { position:absolute; top:0; left:0; width:100%; height:100%; }
-    .placeholder-video { position:relative; width:100%; background:linear-gradient(135deg,#1d4ed8 0%,#3b82f6 100%); border-radius:1rem; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,.15); padding:4rem 2rem; text-align:center; }
-    .placeholder-icon { width:120px; height:120px; margin:0 auto 2rem; background:rgba(255,255,255,.2); border-radius:50%; display:flex; align-items:center; justify-content:center; animation:pulse 2s infinite; }
-    @keyframes pulse { 0%,100% { transform:scale(1); opacity:1; } 50% { transform:scale(1.05); opacity:.8; } }
-    .benefit-box { background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%); border-left:4px solid #1d4ed8; padding:1rem 1.5rem; border-radius:.5rem; transition:.3s; }
-    .benefit-box:hover { transform:translateX(4px); box-shadow:0 4px 12px rgba(29,78,216,.1); }
-  </style>
+        .ph-icon {
+            fill: none;
+            stroke-width: 1.5;
+            stroke: currentColor;
+            color: #1d4ed8;
+        }
+        .gauge-ring-bg {
+            stroke: #4b5563;
+        }
+        .gauge-ring-progress {
+            stroke: #10b981;
+            stroke-dasharray: 125.66;
+            stroke-dashoffset: 31.415;
+        }
+        .progress-bar {
+            height: 1rem;
+            background-color: #e5e7eb;
+            border-radius: 9999px;
+            overflow: hidden;
+            border: 1px solid #d1d5db;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #1d4ed8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: white;
+        }
+        
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .carousel-slide img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+        .carousel-btn:hover {
+            background: white;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .carousel-btn-prev {
+            left: 20px;
+        }
+        .carousel-btn-next {
+            right: 20px;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d1d5db;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .carousel-dot.active {
+            background: #1d4ed8;
+            width: 24px;
+            border-radius: 5px;
+        }
+        .carousel-counter {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.875rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        /* Video Container Styles */
+        .video-container {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Placeholder Video Styles */
+        .placeholder-video {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .placeholder-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        /* Benefit Boxes */
+        .benefit-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid #1d4ed8;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .benefit-box:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.1);
+        }
+    </style>
 </head>
 <body class="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden">
+    
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden">
+        
+        <!-- Header with Logos -->
+        <header class="p-8 sm:p-10 bg-white">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                <div class="mt-4">
+                    <img 
+                        src="assets/branding/stewardshipis-logo.png" 
+                        alt="Stewardship IS Logo" 
+                        class="h-16 sm:h-20 w-auto mb-4 sm:mb-0"
+                    >
+                </div>
+                <div class="flex-shrink-0">
+                    <img 
+                        src="assets/branding/amp-logo.png" 
+                        alt="Acadia Mineral Partners Logo" 
+                        class="h-24 sm:h-32 w-auto"
+                    >
+                </div>
+            </div>
+        </header>
 
-    <!-- Header with Logos -->
-    <header class="p-8 sm:p-10 bg-white">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full">
-        <div class="mt-4 flex items-center space-x-4">
-          <img src="assets/branding/amp-logo.png" alt="Acadia Mineral Partners Logo" class="h-20 w-auto">
-          <img src="assets/branding/stewardshipis-logo.png" alt="Stewardship.IS Logo" class="h-16 w-auto">
-        </div>
-      </div>
-    </header>
+        <!-- Main Content -->
+        <main class="p-8 sm:p-10">
+            
+            <!-- Title -->
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-sis-dark">
+                A Renewed Partnership for Growth
+            </h1>
+            <p class="mt-3 text-lg sm:text-xl text-gray-600">
+                Bespoke Solutions for Acadia Mineral Partners
+            </p>
+            
+            <div class="border-t border-gray-200 my-6"></div>
 
-    <main class="p-8 sm:p-10">
+            <!-- Introduction -->
+            <section class="mt-6">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    As Acadia Mineral Partners closes the highly successful <strong class="font-semibold">FEP IV</strong> and launches <strong class="font-semibold">FEP V</strong>, the operational, accounting, <strong class="font-semibold">A&D evaluating</strong>, and <strong class="font-semibold">both internal and external stakeholder reporting</strong> demands are at an all-time high.
+                </p>
+                <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+                    Stewardship.IS is ready to bridge the gap. We've evolved beyond traditional software to offer a <strong class="font-semibold text-gray-900">"done-for-you" partnership model.</strong> Instead of selling you a tool you have to learn, we provide a premium, white-glove service that delivers precisely the data, reports, and insights you need—when you need them—<strong class="font-semibold text-gray-900">at investment costs within your budget.</strong>
+                </p>
+                <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+                    We do the heavy lifting so you can focus on fund management and investor relations.
+                </p>
+            </section>
+            
+            <!-- Pain Points -->
+            <section class="mt-10">
+                <h2 class="text-2xl font-semibold text-sis-dark tracking-tight">
+                    Liberating Your Team from the Data Grind
+                </h2>
+                <p class="mt-2 text-lg text-gray-600">We understand the critical pain points that arise during periods of intense growth and fund management:</p>
+                
+                <ul class="mt-6 space-y-4">
+                    <li class="flex items-start">
+                        <svg class="flex-shrink-0 h-6 w-6 text-blue-600 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-lg text-gray-700">
+                            <strong class="font-semibold">Data & System Silos:</strong> Difficulty in tracking asset performance, especially down to the well and lease-level, extracting up to date financial model inputs like cost metrics and AFE's funded, managing cash calls, and integrating financial data with your accounting system (like QuickBooks).
+                        </span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="flex-shrink-0 h-6 w-6 text-blue-600 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-lg text-gray-700">
+                            <strong class="font-semibold">Manual Data Extraction:</strong> The costly, manual drag of pulling data from multiple file types across multiple locations that generate inconsistent information and formatting, both on an ongoing monthly basis and when evaluating new opportunities' datarooms.
+                        </span>
+                    </li>
+                    <li class="flex flex-col sm:flex-row items-start">
+                        <svg class="flex-shrink-0 h-6 w-6 text-blue-600 mr-3 mt-1 sm:mt-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-lg text-gray-700">
+                            <strong class="font-semibold">Internal and External Stakeholder Updates, Reporting, and Communications:</strong> The immense, time-consuming effort of preparing for quarterly reports and investor calls, ensuring every number is perfect.
+                        </span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="flex-shrink-0 h-6 w-6 text-blue-600 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-lg text-gray-700">
+                            <strong class="font-semibold">Missed Revenue Opportunities:</strong> The challenge of identifying IRR uplift, tracking partner NRIs accurately, and recouping missing revenue from operators.
+                        </span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="flex-shrink-0 h-6 w-6 text-blue-600 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-lg text-gray-700">
+                            <strong class="font-semibold">Task Automation:</strong> The drain of manual tasks, whether internally, on the internet, or between applications. We create custom solutions that are quick, easy, and plug and play—such as simple Apps for specific actions, behind-the-scene scripts, or even web-browser plug-in extensions private to your company or external to your stakeholders.
+                        </span>
+                    </li>
+                </ul>
+            </section>
+            
+            <div class="border-t border-gray-200 my-10"></div>
 
-      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-sis-dark">
-        A Renewed Partnership for Growth
-      </h1>
-      <p class="mt-3 text-lg sm:text-xl text-gray-600">
-        Bespoke Operational & Data Solutions for Acadia Mineral Partners
-      </p>
+            <!-- S.IS Solutions -->
+            <section class="mt-12">
+                <h2 class="text-2xl font-semibold text-sis-dark tracking-tight">
+                    Our Partnership Solution: Your Operations Hub
+                </h2>
+                <p class="mt-2 text-lg text-gray-600">We manage the data, so you can manage the fund. We provide a menu of services tailored to your exact needs, with <strong class="font-semibold">zero IT overhead</strong> for your team.</p>
 
-      <div class="border-t border-gray-200 my-6"></div>
+                <div class="mt-8 space-y-8">
+                    
+                    <!-- Solution 1: Data Automation -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="flex items-center">
+                            <svg class="ph-icon flex-shrink-0 h-8 w-8 text-sis-blue mr-4" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M216 88v120a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8V48a8 8 0 0 1 8-8h104m64 48a8 8 0 0 0-8-8h-26.34a8 8 0 0 0-5.66 2.34L136 120m50.34-31.66L136 136l-20-20m-8 40a8 8 0 0 1-8 8H72a8 8 0 0 1-8-8v-64a8 8 0 0 1 8-8h48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                            </svg>
+                            <h3 class="text-xl font-semibold text-gray-900">Automated Data & Document Processing</h3>
+                        </div>
+                        <p class="mt-3 text-lg text-gray-700">
+                            Stop downloading and processing files. We manage the heavy lifting by automatically pulling your <strong class="font-semibold">Revenue</strong> and <strong class="font-semibold">JIB</strong> statements directly from top sites like <strong class="font-semibold">EnergyLink</strong>. Our best-in-class conversion tool processes files in any format, effortlessly handling even the most complex, 1,000+ page PDFs. You hand over all file transfer and processing elements and receive only the normalized, query-ready data, complete with categorizations (well name, products, deducts) and NRI calculations.
+                        </p>
+                    </div>
 
-      <!-- (Keep all narrative sections from original FEP index.html here — unchanged except brand names) -->
-      <!-- For brevity in this example, add the rest of your imported content below exactly as in FEP index.html with textual substitutions. -->
+                    <!-- Solution 2: Bespoke Reporting -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="flex items-center">
+                            <svg class="ph-icon flex-shrink-0 h-8 w-8 text-sis-blue mr-4" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M40 200V56a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8v144m0 0H40m0 0v-8m20-24V88m40 88V128m40 40v-40m40 40v-88" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                            </svg>
+                            <h3 class="text-xl font-semibold text-gray-900">FEP-Branded Executive, Fund, & Investor Reporting</h3>
+                        </div>
+                        <p class="mt-3 text-lg text-gray-700">
+                            Impress your stakeholders without the internal workload. We generate custom monthly/quarterly exports, newsletters, and executive-level materials—<strong class="font-semibold">all branded with the FEP logo and color scheme.</strong> We can provide advanced cash call trackers, performance dashboards, and sensitivity models (e.g., pricing vs. benchmarks, $/product metrics) ready for your investor calls.
+                        </p>
+                    </div>
 
-      <!-- Carousel Section -->
-      <section class="mt-12">
-        <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">
-          Proposal Slides
-        </h2>
-        <p class="mt-4 text-lg text-gray-700">
-          Navigate through the proposal deck directly below.
-        </p>
+                    <!-- Solution 3: Non-Op & Accounting -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="flex items-center">
+                            <svg class="ph-icon flex-shrink-0 h-8 w-8 text-sis-blue mr-4" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="40" y="48" width="176" height="160" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <line x1="80" y1="80" x2="176" y2="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <line x1="80" y1="120" x2="96" y2="120" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <line x1="120" y1="120" x2="136" y2="120" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <line x1="160" y1="120" x2="176" y2="120" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <line x1="80" y1="152" x2="96" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <line x1="120" y1="152" x2="136" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <line x1="160" y1="152" x2="176" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <line x1="80" y1="184" x2="96" y2="184" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <line x1="120" y1="184" x2="136" y2="184" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <line x1="160" y1="184" x2="176" y2="184" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                            </svg>
+                            <h3 class="text-xl font-semibold text-gray-900">Seamless Non-Op, <strong class="font-semibold">A&D Evaluation</strong>, & Accounting Integration</h3>
+                        </div>
+                        <p class="mt-3 text-lg text-gray-700">
+                            Our platform handles the full spectrum of non-op accounting: revenue, opex, capex, and AFE tracking on a well-by-well basis. To solve your team's specific pain points, we can deliver <strong class="font-semibold">custom QuickBooks upload templates</strong>, pre-populated with data we've already processed, turning hours of data entry into a simple upload.
+                        </p>
+                    </div>
 
-        <div class="mt-8">
-          <div class="carousel-container bg-gray-50 p-8 rounded-xl shadow-lg">
-            <div class="carousel-track" id="carouselTrack"></div>
-            <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous slide">
-              <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Next slide">
-              <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-          <div class="carousel-dots" id="carouselDots"></div>
-          <div class="carousel-counter" id="carouselCounter">1 / 25</div>
-        </div>
-      </section>
+                    <!-- Solution 4: Revenue Recoupment -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="flex items-center">
+                            <svg class="ph-icon flex-shrink-0 h-8 w-8 text-sis-blue mr-4" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M128 24a96 96 0 0 0-96 96c0 74.4 78.6 112.5 90.9 117.8a8 8 0 0 0 6.2 0c12.3-5.3 90.9-43.4 90.9-117.8a96 96 0 0 0-96-96Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                            </svg>
+                            <h3 class="text-xl font-semibold text-gray-900">Proactive Revenue Recoupment (Deduct Defender™)</h3>
+                        </div>
+                        <p class="mt-3 text-lg text-gray-700">
+                            Stop leaving money on the table. Our proprietary <strong class="font-semibold">Deduct Defender™</strong> tool actively tracks your ownership interests, payment status, and missing products. We automatically estimate potential recoveries and prepare the supporting documentation, giving you a clear path to reclaim revenue and directly boost your fund's IRR.
+                        </p>
+                    </div>
 
-      <!-- Video Section -->
-      <section class="mt-12">
-        <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">
-          Demo Video
-        </h2>
-        <p class="mt-4 text-lg text-gray-700">
-          A demonstration video supporting the workflow automation.
-        </p>
-        <div class="video-container mt-6">
-          <div class="video-wrapper">
-            <video controls preload="metadata" poster="assets/slides/Slide-01.JPG">
-              <source src="assets/video/Stewardship.IS_iPad-Config.webm" type="video/webm">
-              Your browser does not support the embedded video.
-            </video>
-          </div>
-        </div>
-      </section>
+                    <!-- Solution 5: Single Source of Truth & A&D Analysis -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="flex items-center">
+                            <svg class="ph-icon flex-shrink-0 h-8 w-8 text-sis-blue mr-4" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="128" cy="40" rx="96" ry="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <path d="M32 40v176c0 13.2 43 24 96 24s96-10.8 96-24V40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <path d="M224 128c0 13.2-43 24-96 24s-96-10.8-96-24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                                <path d="M224 92c0 13.2-43 24-96 24s-96-10.8-96-24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                            </svg>
+                            <h3 class="text-xl font-semibold text-gray-900">Single Source of Truth & Integrated A&D Analysis</h3>
+                        </div>
+                        <p class="mt-3 text-lg text-gray-700">
+                            We do all the heavy lifting to create a <strong class="font-semibold">Single Source of Truth</strong> for all your asset and financial data, eliminating varying data points being used across different systems and teams. This centralized, trusted data also allows you to seamlessly incorporate current investment performance and assumptions into potential acquisitions, enabling you to <strong class="font-semibold">quickly and efficiently analyze A&D activity</strong> with maximum confidence.
+                        </p>
+                    </div>
 
-      <!-- Footer -->
-      <section class="mt-12">
-        <p class="text-sm text-gray-500">
-          Stewardship.IS, Inc. © 2025 | Confidential Proposal Prepared for Acadia Mineral Partners
-        </p>
-      </section>
+                    <!-- Solution 6: Custom Automation & Apps -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="flex items-center">
+                            <svg class="ph-icon flex-shrink-0 h-8 w-8 text-sis-blue mr-4" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M152 128a24 24 0 1 1-24-24 24 24 0 0 1 24 24ZM224 128a96 96 0 0 1-96 96 96 96 0 0 1-96-96 96 96 0 0 1 96-96 96 96 0 0 1 96 96Zm-68 8h17.9l-3.3-15.6a8 8 0 0 0-4.7-6.5l-15.5-7.7a8 8 0 0 0-10.2 3l-8 13.8a8 8 0 0 0 1.2 9.5l4.3 4.3Zm-59-15.9l4.3-4.3a8 8 0 0 0 1.2-9.5l-8-13.8a8 8 0 0 0-10.2-3l-15.5 7.7a8 8 0 0 0-4.7 6.5L80.1 120H98a8 8 0 0 0 0-16H73.3l-3.2-15.6a8 8 0 0 0-4.7-6.5l-15.5-7.7a8 8 0 0 0-10.2 3l-8 13.8a8 8 0 0 0 1.2 9.5l4.3 4.3Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                            </svg>
+                            <h3 class="text-xl font-semibold text-gray-900">Rapid Application & Workflow Deployment</h3>
+                        </div>
+                        <p class="mt-3 text-lg text-gray-700">
+                            When an off-the-shelf solution isn't efficient, we build it. We quickly provide <strong class="font-semibold">purpose-built Apps, browser extensions, and plug-ins</strong> tailored to your specific actions, whether automating data entry, extracting information from third-party websites, or orchestrating complex workflows that involve multiple existing software applications. This custom, plug-and-play approach eliminates the need for your team to handle manual, repetitive tasks across systems.
+                        </p>
+                    </div>
 
-    </main>
-  </div>
+                </div>
+            </section>
 
-  <script>
-    const slideImages = Array.from({length:25}, (_,i) => `assets/slides/Slide-${String(i+1).padStart(2,'0')}.JPG`);
-    let currentSlide = 0;
-    const track = document.getElementById('carouselTrack');
-    const dotsContainer = document.getElementById('carouselDots');
-    const counter = document.getElementById('carouselCounter');
+            <!-- The S.IS Difference -->
+            <section class="mt-12 bg-sis-dark text-white p-8 rounded-lg">
+                <h2 class="text-2xl font-semibold tracking-tight text-white">
+                    The S.IS Difference: A True Partnership
+                </h2>
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold text-blue-300">Premium Support, Fair Price</h4>
+                        <p class="mt-1 text-gray-200">We are not a SaaS company. We are your partner. Our flexible, cost-effective pricing is month-to-month with no long-term contracts. We handle all data subscription and hosting costs, so you see no pass-through charges.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-blue-300">Zero IT Overhead</h4>
+                        <p class="mt-1 text-gray-200">There is no software to install, no servers to maintain, and no IT team to involve. We host, maintain, and secure everything, including restricted access portals for your partners (like Carnelian) if and when you need them.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-blue-300">Customized & Flexible</h4>
+                        <p class="mt-1 text-gray-200">Your workflow is unique. We adapt to you. Whether it's building shapefiles, importing acquisition exhibits, or creating custom tags, our platform is built to be flexible. You get a solution tailored to FEP, not a one-size-fits-all product.</p>
+                    </div>
+                </div>
+            </section>
 
-    slideImages.forEach((src, index) => {
-      const slide = document.createElement('div');
-      slide.className = `carousel-slide ${index===0 ? 'active' : ''}`;
-      slide.innerHTML = `<img src="${src}" alt="Slide ${index+1}" loading="lazy">`;
-      track.appendChild(slide);
+            <!-- Example 1: Core Financial Analytics -->
+            <section class="mt-12">
+                <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">
+                    Example 1: Core Financial Analytics & Reporting
+                </h2>
+                <p class="mt-4 text-lg text-gray-700">
+                    Below are scrubbed examples of the type of custom dashboards and high-impact metrics we provide. These visualizations are <strong class="font-semibold">no-query-required; we provide the answers <strong class="font-semibold">for</strong> you, complete with actionable insights to increase your IRR.</strong>
+                </p>
 
-      const dot = document.createElement('div');
-      dot.className = `carousel-dot ${index===0 ? 'active' : ''}`;
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    });
+                <!-- AFE Budget Tracker Card -->
+                <div class="mt-8 bg-white p-6 rounded-xl shadow-lg border border-gray-200 col-span-1 md:col-span-3">
+                    <h3 class="text-xl font-semibold text-gray-900">AFE Budget Tracker (FEP X - Active)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 items-center">
+                        
+                        <!-- Left Side: Gauge Chart -->
+                        <div class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg md:col-span-1">
+                            <h4 class="text-lg font-medium text-gray-700 whitespace-nowrap">Total AFEs Paid vs. Budget</h4>
+                            <div class="flex items-center justify-center h-28 relative w-full max-w-xs">
+                                <svg class="w-full h-full" viewBox="0 0 100 75">
+                                    <path 
+                                        d="M 10 50 A 40 40 0 1 1 90 50" 
+                                        fill="none" 
+                                        class="gauge-ring-bg"
+                                        stroke-width="8" 
+                                        stroke-linecap="round"
+                                    />
+                                    <path 
+                                        d="M 10 50 A 40 40 0 1 1 90 50" 
+                                        fill="none" 
+                                        class="gauge-ring-progress"
+                                        stroke-width="8" 
+                                        stroke-linecap="round"
+                                    />
+                                    <text x="50" y="62" text-anchor="middle" 
+                                          font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#1f2937">
+                                        75%
+                                    </text>
+                                    <text x="50" y="74" text-anchor="middle" 
+                                          font-family="Inter, sans-serif" font-size="9" fill="#4b5563">
+                                        <tspan font-weight="600" fill="#1f2937">$150M Paid</tspan> / $200M Allotted
+                                    </text>
+                                </svg>
+                            </div>
+                        </div>
 
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-    document.getElementById('prevBtn').addEventListener('click', () => changeSlide(-1));
-    document.getElementById('nextBtn').addEventListener('click', () => changeSlide(1));
+                        <!-- Right Side: AFE Table -->
+                        <div class="overflow-x-auto md:col-span-2">
+                            <h4 class="text-lg font-medium text-gray-700 mb-2">Individual AFE Status</h4>
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">AFE</th>
+                                        <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Net AFE ($)</th>
+                                        <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Progress</th>
+                                        <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Projection</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200 text-gray-800 text-sm">
+                                    <tr>
+                                        <td class="px-3 py-3">Wolf 1H (DC&I)</td>
+                                        <td class="px-3 py-3">$1.2M</td>
+                                        <td class="px-3 py-3">
+                                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 80%;">80%</div></div>
+                                        </td>
+                                        <td class="px-3 py-3 text-green-600 font-medium">Under (5%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-3">Starr 2 (DC&I)</td>
+                                        <td class="px-3 py-3">$2.5M</td>
+                                        <td class="px-3 py-3">
+                                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 100%;">100%</div></div>
+                                        </td>
+                                        <td class="px-3 py-3 text-green-600 font-medium">Paid - Under (2%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-3">R-3 Prod Facility</td>
+                                        <td class="px-3 py-3">$0.8M</td>
+                                        <td class="px-3 py-3">
+                                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 60%;">60%</div></div>
+                                        </td>
+                                        <td class="px-3 py-3 text-gray-600">On Target</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-3">Eagle 3H (DC&I)</td>
+                                        <td class="px-3 py-3">$1.5M</td>
+                                        <td class="px-3 py-3">
+                                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 95%;">95%</div></div>
+                                        </td>
+                                        <td class="px-3 py-3 text-red-600 font-medium">Over (3%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-3">King 1 (Recomplete)</td>
+                                        <td class="px-3 py-3">$0.5M</td>
+                                        <td class="px-3 py-3">
+                                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 20%;">20%</div></div>
+                                        </td>
+                                        <td class="px-3 py-3 text-gray-600">On Target</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
-    function changeSlide(delta){
-      currentSlide = (currentSlide + delta + slides.length) % slides.length;
-      updateCarousel();
-    }
-    function goToSlide(index){
-      currentSlide = index;
-      updateCarousel();
-    }
-    function updateCarousel(){
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
-      slides.forEach((s,i)=>s.classList.toggle('active', i===currentSlide));
-      dots.forEach((d,i)=>d.classList.toggle('active', i===currentSlide));
-      counter.textContent = `${currentSlide+1} / ${slides.length}`;
-    }
-  </script>
+                <!-- Well-Level Returns Card -->
+                <div class="mt-6 bg-white p-6 rounded-xl shadow-lg border border-gray-200 col-span-1 md:col-span-3">
+                    <h3 class="text-xl font-semibold text-gray-900">Well-Level Returns & A&D Analysis</h3>
+                    <p class="text-sm text-gray-500 mb-4">Allows quick A&D opportunity analysis and portfolio management.</p>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Asset / Well</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">IRR To Date (%)</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">ROI (x)</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">FEP's Allocated Value ($)</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Opportunity</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200 text-gray-800 text-sm">
+                                <tr>
+                                    <td class="px-4 py-3 whitespace-nowrap">Red River 1-H</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">18.5%</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1.8x</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">$65,000</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-red-600 font-semibold">Divest Candidate</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 whitespace-nowrap">Mustang Ridge 5-C</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">35.2%</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">3.1x</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">$71,500</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-green-600 font-semibold">Top Quartile</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 whitespace-nowrap">Bluebonnet 2B</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">22.0%</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2.1x</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">$58,000</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-gray-700">On Target</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 whitespace-nowrap">Gunsight 1A (Non-Op)</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">28.0%</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2.5x</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">$42,000</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-green-600 font-semibold">Exceeding Type Curve</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 whitespace-nowrap">Pecos 8H</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">15.0%</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1.5x</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">$75,000</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-red-600 font-semibold">Workover Candidate</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 whitespace-nowrap">Delaware 12</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">31.5%</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2.9x</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">$68,500</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-green-600 font-semibold">Top Quartile</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 whitespace-nowrap">Midland Unit 1</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">24.5%</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2.2x</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">$55,000</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-gray-700">On Target</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 whitespace-nowrap">Howard 7D (Non-Op)</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">19.0%</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1.9x</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">$39,000</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-gray-700">On Target</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 whitespace-nowrap">Wolfcamp 33A</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">40.1%</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">3.8x</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">$74,000</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-green-600 font-semibold">Top Performer</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 whitespace-nowrap">Reeves 5 (Non-Op)</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">12.0%</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1.2x</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">$51,500</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-red-600 font-semibold">Divest Candidate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example 2: Deduct Defender -->
+            <section class="mt-12">
+                <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">
+                    Example 2: Deduct Defender™ Revenue Recoupment Case Study
+                </h2>
+                <p class="mt-4 text-lg text-gray-700">
+                    The Deduct Defender™ tool actively monitors for three key types of revenue loss <strong class="font-semibold">plus a separate three proprietary algorithms based on our in-house industry experience that no one else tracks to do desperate data, missing logic, and requirements for understanding land & legal with finance & accounting paired with first purchasers' M.O.s and county data (private and public) - this is where we really set you apart from your competitors and build unmatched credibility.</strong> Here is a scrubbed example of a potential recapture scenario:
+                </p>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Left: Problem -->
+                    <div class="p-6 rounded-xl shadow-lg border border-red-300 bg-red-50">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl font-bold text-red-700 mr-3">Problem</span>
+                            <!-- Clean Warning Icon -->
+                            <svg class="h-8 w-8 text-red-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5h.008v.008H12V16.5z" />
+                            </svg>
+                        </div>
+                        <p class="text-lg text-gray-700 font-semibold">
+                            Operator X in the Permian Basin was applying an incorrect fuel and compression deduction rate based on <strong class="font-semibold">mineral lease provisions or outdated JDA amendments for Non-op WI</strong>.
+                        </p>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong class="font-semibold">Initial Loss Rate:</strong> ~1.1% of gross revenue being over-deducted monthly.</li>
+                            <li><strong class="font-semibold">Missing Revenue Identified:</strong> With using only 3 of 6 algorithms, S.IS uncovered missing revenues of 8.5% with remaining algorithms expected to add an additional 5.75% covering the period from Jan-25 through Jul-25.</li>
+                            <li><strong class="font-semibold">Timeframe Detected:</strong> Detected by S.IS systems after 6 months of data processing.</li>
+                            <li><strong class="font-semibold">Potential Exposure:</strong> $25,000 per month across the portfolio of impacted wells in just 2 specific funds requested by FEP out of 5 funds.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Right: Solution/Result -->
+                    <div class="p-6 rounded-xl shadow-lg border border-green-300 bg-green-50">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl font-bold text-green-700 mr-3">Recoupment</span>
+                            <svg class="h-8 w-8 text-green-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <p class="text-lg text-gray-700 font-semibold">
+                            S.IS immediately generated a variance report <strong class="font-semibold">along with the trademarked packets FEP's land team can immediately utilize with Operators to recoup dollars</strong>, citing the correct JDA clause or Lease clause where available and automatically calculating the precise overcharge or under payment.
+                        </p>
+                        <div class="mt-4 bg-white p-4 rounded-lg shadow-md">
+                            <p class="text-sm text-gray-500">Total Revenue Recaptured (Historical 6 months):</p>
+                            <p class="text-4xl font-extrabold text-sis-dark mt-1">$152,377</p>
+                            <p class="text-sm text-green-600 font-semibold mt-2">
+                                <strong class="font-semibold">Annualized IRR Uplift:</strong> Estimated +6.4% increase on affected assets.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example 3: Interactive Product Showcase Carousel -->
+            <section class="mt-12">
+                <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">
+                    Example 3: S.IS Product Modules & Interfaces
+                </h2>
+                <p class="mt-4 text-lg text-gray-700">
+                    Explore our suite of intelligent action modules that can be easily tailored to FEP's branding and specific needs. <strong class="font-semibold">Each module includes easy download capabilities for the report page and full Excel data export functionality</strong>, ensuring you have complete control over your data and presentations.
+                </p>
+
+                <!-- Carousel Container -->
+                <div class="mt-8">
+                    <div class="carousel-container bg-gray-50 p-8 rounded-xl shadow-lg">
+                        <!-- Carousel Track -->
+                        <div class="carousel-track" id="carouselTrack">
+                            <!-- Slides will be generated dynamically -->
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous slide">
+                            <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Next slide">
+                            <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Carousel Dots -->
+                    <div class="carousel-dots" id="carouselDots"></div>
+
+                    <!-- Carousel Counter -->
+                    <div class="carousel-counter" id="carouselCounter">1 / 25</div>
+                </div>
+
+                <div class="mt-6 bg-blue-50 border-l-4 border-sis-blue p-4 rounded">
+                    <p class="text-sm text-gray-700">
+                        <strong class="font-semibold text-sis-dark">Interactive Features:</strong> Use the arrow buttons to navigate through our product modules. Click on the dots below to jump to specific slides. Each interface shown can be customized with your branding, metrics, and data preferences.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Example 4: Document QC Tool -->
+            <section class="mt-12">
+                <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">
+                    Example 4: Massive Folder and Nested Folders Document QC
+                </h2>
+                <p class="mt-4 text-lg text-gray-700">
+                    This was a tool we actually developed internally for ourselves and make available to others as a <strong class="font-semibold">"sanity saver."</strong> S.IS and its partners alike have no shortage of gigabytes of Excel and CSV files strewn across company servers, team folders, project copied folders, downloads, etc. that leads to a lot of time spent looking for which file should they be using.
+                </p>
+                <p class="mt-4 text-lg text-gray-700">
+                    Now any individual (granted access) can use it whenever via simple user prompts in the interface S.IS built to <strong class="font-semibold">'speak English'</strong> to the user and not code.
+                </p>
+
+                <!-- Key Benefits Grid -->
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="benefit-box">
+                        <div class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-sis-blue text-white rounded-full flex items-center justify-center font-bold mr-3">1</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Identifies All Duplicate Files</h4>
+                                <p class="mt-1 text-gray-700">Regardless of whether the file name is the same (it searches the metadata) and how big the folder is — it even searches the subfolders if you tell it to.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-box">
+                        <div class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-sis-blue text-white rounded-full flex items-center justify-center font-bold mr-3">2</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Smart Duplicate Management</h4>
+                                <p class="mt-1 text-gray-700">Provides you with a full list of the files and asks if you would like to delete the duplicates and keep the newest or oldest version only.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-box">
+                        <div class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-sis-blue text-white rounded-full flex items-center justify-center font-bold mr-3">3</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Deep Content Search</h4>
+                                <p class="mt-1 text-gray-700">Combs through not just the worksheets and cells, but it hones in on any component of any cell to find all files containing a specific word/name (such as a specific owner that only popped up in a foregone A&D evaluation).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-box">
+                        <div class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-sis-blue text-white rounded-full flex items-center justify-center font-bold mr-3">4</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Flexible File Actions</h4>
+                                <p class="mt-1 text-gray-700">Provides you a list of all the files and asks if you want to keep them, "Quarantine" them via its auto folder creation and file movement script, or delete them.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Section -->
+                <div class="mt-10">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">See It In Action</h3>
+                    <p class="text-lg text-gray-700 mb-6">
+                        This is just one of many ways we help our partners get close to our collective goal of all team members having access to the <strong class="font-semibold">Single Data Source Truth File</strong>. Check it out below for a very quick run through; be sure to note the simple Yes/No or letter-based responses you can provide as well as the summary of every file it touched, sorted, found, moved, deleted, etc.!
+                    </p>
+
+                    <div class="video-container">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://player.vimeo.com/video/1134402759?badge=0&autopause=0&player_id=0&app_id=58479" 
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                title="FEP Proposal - Example 4 - Document QC Tool">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-gray-50 border-l-4 border-sis-blue p-4 rounded">
+                        <p class="text-sm text-gray-700">
+                            <strong class="font-semibold text-sis-dark">Implementation Note:</strong> It's largely code-based, but it can easily be run in a simple PowerShell or VS Code (which we can setup for you). It also prompts you along the way to ensure you are getting exactly what you want, from the place you want, with the changes you want.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example 5: Custom Applications & Extensions -->
+            <section class="mt-12">
+                <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">
+                    Example 5: Quick Customized Applications & Extensions
+                </h2>
+                <p class="mt-4 text-lg text-gray-700">
+                    S.IS can attentively listen to FEP's description of any process across any team members and suggest highly impactful solutions that are:
+                </p>
+
+                <!-- Three Key Benefits -->
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-200 shadow-md">
+                        <div class="flex items-center justify-center w-16 h-16 bg-sis-blue rounded-full mb-4 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-gray-900 mb-2">Quickly Built</h4>
+                        <p class="text-center text-gray-700">Rapid development cycles mean you get solutions in days, not months. We've built applications in as little as 1 day.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border-2 border-purple-200 shadow-md">
+                        <div class="flex items-center justify-center w-16 h-16 bg-purple-600 rounded-full mb-4 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-gray-900 mb-2">Tailored to Each Person</h4>
+                        <p class="text-center text-gray-700">Every solution is customized to the specific process, workflow, and preferences of the individual or team using it.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border-2 border-green-200 shadow-md">
+                        <div class="flex items-center justify-center w-16 h-16 bg-green-600 rounded-full mb-4 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-gray-900 mb-2">Significant Time Savings</h4>
+                        <p class="text-center text-gray-700">Automating 'even the simple stuff' saves hours per week and greatly increases productivity across your team.</p>
+                    </div>
+                </div>
+
+                <!-- Real-World Example -->
+                <div class="mt-10 bg-gradient-to-r from-blue-900 to-indigo-900 text-white p-8 rounded-xl shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-4">Real Success Story</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        Below is just one example of an application we built in <strong class="underline">1 day</strong> that reduced a <strong class="underline">1.5 hour process</strong> with lots of download errors and missing files to the <strong class="underline">click of a button</strong> where the whole process is automated and completed between <strong class="underline">30 seconds and 2 minutes</strong> depending on size.
+                    </p>
+                    <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
+                        <p class="text-blue-100 text-base">
+                            <span class="font-semibold">Why it was a big hit:</span> We built it for them as a <strong>Chrome web browser "extension / plugin"</strong> that had a branded logo and simple interface! The entire team could use it instantly with no training required.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video Placeholder -->
+                <div class="mt-10">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Watch the Demo</h3>
+                    <p class="text-lg text-gray-700 mb-6">
+                        See how this custom Chrome extension transformed their workflow. <strong class="font-semibold">Video demonstration coming soon!</strong>
+                    </p>
+
+                    <div class="placeholder-video">
+                        <div class="placeholder-icon">
+                            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-3xl font-bold text-white mb-3">Video Demo Coming Tomorrow</h4>
+                        <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                            We're preparing a detailed walkthrough of this custom browser extension showing how automation transformed a complex, error-prone process into a one-click solution.
+                        </p>
+                        <div class="mt-6 inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
+                            <p class="text-white font-semibold">Check back soon for the full demonstration!</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+                        <div class="flex items-start">
+                            <svg class="flex-shrink-0 h-6 w-6 text-yellow-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p class="text-sm text-gray-700">
+                                <strong class="font-semibold text-gray-900">Video Placeholder:</strong> This section is ready for your video embed. Once you provide the Vimeo or YouTube link tomorrow, we'll replace this placeholder with the actual demonstration video showing the Chrome extension in action.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Moving Forward -->
+            <section class="mt-12">
+                <h2 class="text-2xl font-semibold text-sis-dark tracking-tight">
+                    Moving Forward
+                </h2>
+                <p class="mt-4 text-lg text-gray-700">
+                    The dashboards and case studies above represent just a fraction of the insights we can immediately provide to Acadia Mineral Partners. We are ready to transition your complex data streams into actionable, high-confidence reports.
+                </p>
+                <p class="mt-6 text-lg font-semibold text-gray-800">
+                    We look forward to renewing our partnership and helping Acadia Mineral Partners achieve outstanding success.
+                </p>
+            </section>
+
+        </main>
+        
+        <!-- Footer -->
+        <footer class="p-8 bg-gray-50 border-t border-gray-200">
+            <p class="text-center text-sm text-gray-500">
+                Stewardship.IS, Inc. &copy; 2025 | Confidential Proposal Prepared for Acadia Mineral Partners
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Carousel JavaScript -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+        // Carousel Configuration
+        const slideImages = [
+            'assets/slides/Slide-01.JPG',
+            'assets/slides/Slide-02.JPG',
+            'assets/slides/Slide-03.JPG',
+            'assets/slides/Slide-04.JPG',
+            'assets/slides/Slide-05.JPG',
+            'assets/slides/Slide-06.JPG',
+            'assets/slides/Slide-07.JPG',
+            'assets/slides/Slide-08.JPG',
+            'assets/slides/Slide-09.JPG',
+            'assets/slides/Slide-10.JPG',
+            'assets/slides/Slide-11.JPG',
+            'assets/slides/Slide-12.JPG',
+            'assets/slides/Slide-13.JPG',
+            'assets/slides/Slide-14.JPG',
+            'assets/slides/Slide-15.JPG',
+            'assets/slides/Slide-16.JPG',
+            'assets/slides/Slide-17.JPG',
+            'assets/slides/Slide-18.JPG',
+            'assets/slides/Slide-19.JPG',
+            'assets/slides/Slide-20.JPG',
+            'assets/slides/Slide-21.JPG',
+            'assets/slides/Slide-22.JPG',
+            'assets/slides/Slide-23.JPG',
+            'assets/slides/Slide-24.JPG',
+            'assets/slides/Slide-25.JPG'
+        ];
+
+        let currentSlide = 0;
+        const track = document.getElementById('carouselTrack');
+        const dotsContainer = document.getElementById('carouselDots');
+        const counter = document.getElementById('carouselCounter');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Generate slides
+        slideImages.forEach((imgSrc, index) => {
+            const slide = document.createElement('div');
+            slide.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
+            slide.innerHTML = `<img src="${imgSrc}" alt="Product Module ${index + 1}" loading="lazy">`;
+            track.appendChild(slide);
+
+            // Create dot
+            const dot = document.createElement('div');
+            dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function updateCarousel() {
+            // Update track position
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update active states
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+
+            // Update counter
+            counter.textContent = `${currentSlide + 1} / ${slideImages.length}`;
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideImages.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
+            updateCarousel();
+        }
+
+        // Event listeners
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // Touch/Swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) prevSlide();
+        }
+
+        // Initialize
+        updateCarousel();
+    </script>
+
 </body>
 </html>
