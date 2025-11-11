@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMP Proposal</title>
+  <style>
+    :root { --brand-green: #157a48; --bg:#0d1117; --fg:#c9d1d9; }
+    html,body{height:100%;}
+    body{margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--fg);}    
+    .header-logo{ position: fixed; top: 16px; right: 16px; z-index: 1000; }
+    .header-logo img{ height: 56px; width:auto; filter: drop-shadow(0 1px 2px rgba(0,0,0,.35)); }
+    .main{ max-width: 960px; margin: 96px auto 48px; padding: 0 24px; }
+    .card{ background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius:12px; padding:24px; }
+    a { color: var(--fg); }
+  </style>
+</head>
+<body>
+  <a class="header-logo" href="./" aria-label="AMP home">
+    <img src="AcadiaMineralPartners.png" alt="Acadia Mineral Partners logo">
+  </a>
+  <main class="main">
+    <h1>AMP Proposal</h1>
+    <div class="card">
+      <p>Welcome. This placeholder page shows the AMP logo pinned to the top-right using the local image stored in the repository.</p>
+      <ul>
+        <li>Logo source: <code>AcadiaMineralPartners.png</code> (at the repository root).</li>
+        <li>To switch to an assets folder later, upload to <code>assets/branding/amp-logo.png</code> and update the <code>src</code> accordingly.</li>
+        <li>You can enable GitHub Pages (Settings → Pages → Build and deployment: Deploy from a branch, Branch: main, /root) to serve this file at a public URL.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
