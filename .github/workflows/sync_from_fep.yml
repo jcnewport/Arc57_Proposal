@@ -1,0 +1,74 @@
+name: Sync AMP_Proposal from FEP_Proposal
+on:
+  workflow_dispatch:
+    inputs:
+      commitMessage:
+        description: Optional commit message
+        required: false
+        default: "Sync from FEP_Proposal"
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout AMP_Proposal
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepare directories
+        run: |
+          mkdir -p assets/slides assets/video assets/branding
+
+      - name: Ensure AMP logo is in assets
+        run: |
+          if [ -f "AcadiaMineralPartners.png" ]; then
+            git mv -f "AcadiaMineralPartners.png" "assets/branding/amp-logo.png" || mv -f "AcadiaMineralPartners.png" "assets/branding/amp-logo.png"
+          fi
+
+      - name: Download slides from FEP_Proposal
+        run: |
+          base="https://raw.githubusercontent.com/jcnewport/FEP_Proposal/main"
+          for i in $(seq -w 01 25); do
+            curl -fsSL "$base/Slide-$i.JPG" -o "assets/slides/Slide-$i.JPG"
+          done
+
+      - name: Download video from FEP_Proposal
+        run: |
+          base="https://raw.githubusercontent.com/jcnewport/FEP_Proposal/main"
+          curl -fsSL "$base/Stewardship.IS_iPad-Config.webm" -o "assets/video/Stewardship.IS_iPad-Config.webm"
+
+      - name: Download Stewardship.IS logo (localize header)
+        run: |
+          curl -fsSL "https://raw.githubusercontent.com/jcnewport/Image_URLs/76aa78326304213e333d27b2fd46e445e4f220b4/Stewardship-IS_Logo.png" -o "assets/branding/stewardshipis-logo.png"
+
+      - name: Download index.html from FEP_Proposal
+        run: |
+          curl -fsSL "https://raw.githubusercontent.com/jcnewport/FEP_Proposal/main/index.html" -o "_index_fep.html"
+
+      - name: Retarget assets and AMP branding
+        run: |
+          sed -E \
+            -e 's|https://github.com/jcnewport/FEP_Proposal/blob/main/Slide-([0-9]{2})\.JPG\?raw=true|assets/slides/Slide-\1.JPG|g' \
+            -e 's|https://raw.githubusercontent.com/jcnewport/Image_URLs/[^"]*/FEP_Logo.jpeg|assets/branding/amp-logo.png|g' \
+            -e 's|https://raw.githubusercontent.com/jcnewport/Image_URLs/[^"]*/Stewardship-IS_Logo.png|assets/branding/stewardshipis-logo.png|g' \
+            -e 's|Fortress Energy Partners|Acadia Mineral Partners|g' \
+            _index_fep.html > index.html
+          rm -f _index_fep.html
+
+      - name: Commit and push changes
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "${{ github.event.inputs.commitMessage || 'Sync from FEP_Proposal' }}"
+            git push
+          fi
