@@ -22,7 +22,7 @@ Arc57_Proposal/
 ├─ index.html                # Main proposal page (Arc57 branding + confidential banner)
 ├─ assets/
 │  ├─ branding/
-│  │  ├─ arc57-logo.png      # Arc57 logo (add/replace)
+│  │  ├─ arc57-logo.jpg      # Arc57 logo (case-sensitive on Pages)
 │  │  └─ stewardshipis-logo.png
 │  ├─ slides/                # 25 JPG slide images (carousel)
 │  └─ video/
@@ -91,43 +91,36 @@ git push
 
 ## 6. Optimizing Images
 
-### Slides
-Convert to WebP (optional performance boost):
-
+### Slides → WebP (optional)
 ```bash
-# Requires ImageMagick (magick) installed
+# Requires ImageMagick
 mkdir -p assets/slides/webp
 for %i in (assets\slides\Slide-*.JPG) do magick "%i" -quality 82 "assets\slides\webp\%~ni.webp"
 ```
-
-Then modify carousel script to prefer WebP (optional):
-
-```js
-const slideImages = Array.from({length:25},(_,i)=>`assets/slides/webp/Slide-${String(i+1).padStart(2,'0')}.webp`);
-```
-
-Keep original JPGs as fallback or create `<picture>` elements.
+Then adjust the carousel to reference the WebP folder, or use `<picture>` for WebP + JPG fallback.
 
 ### Logos
-Run `oxipng` or `pngquant`:
-
+Use PNG or SVG when available. For PNG optimization:
 ```bash
 pngquant --quality=65-80 --force --output assets/branding/arc57-logo.png assets/branding/arc57-logo.png
 ```
 
 ---
 
-## 7. Adding an Optimization Workflow (Optional)
+## 7. Notes on GitHub Pages Caching
 
-Ask for “image optimization workflow” and a GitHub Actions file will be provided to batch convert on push.
+Pages is case-sensitive and heavily cached. If an image appears “stuck”:
+
+- Verify the exact path exists in the repo.
+- Append a version query to the URL (e.g., `arc57-logo.jpg?v=2`) to bypass cache.
+- Hard refresh (Ctrl+F5) once after deployment.
 
 ---
 
 ## 8. Development Notes
 
-- The site uses Tailwind CDN for rapid iteration (no build pipeline).
-- For further modularization, you can split sections into partial HTML fragments and assemble with a tiny Node script or static site generator.
-- Dark mode, password gate, or analytics can be added later.
+- Tailwind CDN is used for rapid iteration (no build step).
+- For modularization, split sections into partials and assemble with a small script or SSG.
 
 ---
 
@@ -142,43 +135,17 @@ Ask for “image optimization workflow” and a GitHub Actions file will be prov
 
 ---
 
-## 10. Future Enhancements (Backlog)
+## 10. Future Enhancements
 
-- Dark mode toggle
-- Slide thumbnails / faster navigation
-- CSV/Excel download buttons for tables
-- Automated nightly sync from source data repo
-- Accessibility pass (aria labels on interactive elements)
-- Analytics (lightweight, privacy friendly)
+- Dark mode
+- Slide thumbnails
+- CSV/Excel download buttons
+- Nightly sync workflow
+- Accessibility pass
+- Lightweight analytics
 
 ---
 
 ## 11. Confidentiality & Usage
 
 This repository is a read‑only proposal deliverable. Do not distribute outside authorized Arc57, LLC decision makers. All code, text, and media remain property of Stewardship.IS, Inc. unless otherwise contracted.
-
----
-
-## 12. Support
-
-For refinements or deployment questions, open an issue (if issues are enabled) or reach out directly.
-
----
-
-## 13. Quick Verification Checklist After Changes
-
-| Item | Verify |
-|------|--------|
-| Logo displays | Header shows Arc57 & Stewardship.IS |
-| Carousel works | Arrows & dots navigate all 25 slides |
-| Tables visible | AFE and Well-Level Returns render with data |
-| Videos play | Portal & Statements tool videos start & controls visible |
-| Colors correct | Primaries (#1B3776) and accents (#02A64F) |
-| Confidential banner | Sticky, top, legible |
-| No residual AMP/FEP text | Search page source for "AMP" / "FEP" |
-
----
-
-## 14. License
-
-Not open source. Proprietary & confidential.
