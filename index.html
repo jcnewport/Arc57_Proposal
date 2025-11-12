@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arc57, LLC • Partnership Proposal • Stewardship.IS</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Arc57, LLC • Stewardship.IS Partnership Proposal</title>
 
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -24,221 +25,331 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
   <style>
-    body { font-family: 'Inter','sans-serif'; }
-    .ph-icon { fill: none; stroke-width: 1.5; stroke: currentColor; color: #1d4ed8; }
-    .gauge-ring-bg { stroke: #4b5563; }
-    .gauge-ring-progress { stroke: #10b981; stroke-dasharray: 125.66; stroke-dashoffset: 31.415; }
-    .progress-bar { height: 1rem; background: #e5e7eb; border-radius: 9999px; overflow: hidden; border: 1px solid #d1d5db; }
-    .progress-bar-fill { height: 100%; background: #1d4ed8; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 500; color: #fff; }
-
+    body{font-family:'Inter','sans-serif';}
     /* Carousel */
-    .carousel-container { position: relative; width: 100%; overflow: hidden; border-radius: .5rem; }
-    .carousel-track { display: flex; transition: transform .6s cubic-bezier(.4,0,.2,1); }
-    .carousel-slide { min-width: 100%; display: flex; justify-content: center; align-items: center; opacity: 0; transform: scale(.95); transition: opacity .6s, transform .6s; }
-    .carousel-slide.active { opacity: 1; transform: scale(1); }
-    .carousel-slide img { max-width: 100%; height: auto; border-radius: .5rem; box-shadow: 0 10px 25px rgba(0,0,0,.1); }
-    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.95); border: none; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; display:flex; align-items:center; justify-content:center; transition:.3s; box-shadow: 0 4px 12px rgba(0,0,0,.15); z-index:10; }
-    .carousel-btn:hover { background:#fff; box-shadow:0 6px 16px rgba(0,0,0,.2); transform: translateY(-50%) scale(1.1); }
-    .carousel-btn-prev { left: 20px; }
-    .carousel-btn-next { right: 20px; }
-    .carousel-dots { display:flex; justify-content:center; gap:8px; margin-top:20px; }
-    .carousel-dot { width:10px; height:10px; border-radius:50%; background:#d1d5db; cursor:pointer; transition:.3s; }
-    .carousel-dot.active { background:#1d4ed8; width:24px; border-radius:5px; }
-    .carousel-counter { text-align:center; margin-top:12px; font-size:.875rem; color:#6b7280; font-weight:500; }
+    .carousel-container{position:relative;width:100%;overflow:hidden;border-radius:.5rem;}
+    .carousel-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1);}
+    .carousel-slide{min-width:100%;display:flex;justify-content:center;align-items:center;opacity:0;transform:scale(.95);transition:opacity .6s,transform .6s;}
+    .carousel-slide.active{opacity:1;transform:scale(1);}
+    .carousel-slide img{max-width:100%;height:auto;border-radius:.5rem;box-shadow:0 10px 25px rgba(0,0,0,.1);}
+    .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.95);border:none;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:10;}
+    .carousel-btn:hover{background:#fff;box-shadow:0 6px 16px rgba(0,0,0,.2);transform:translateY(-50%) scale(1.1);}
+    .carousel-btn-prev{left:20px;}
+    .carousel-btn-next{right:20px;}
+    .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:20px;}
+    .carousel-dot{width:10px;height:10px;border-radius:50%;background:#d1d5db;cursor:pointer;transition:.3s;}
+    .carousel-dot.active{background:#1B3776;width:24px;border-radius:5px;}
+    .carousel-counter{text-align:center;margin-top:12px;font-size:.875rem;color:#6b7280;font-weight:500;}
 
-    /* Video Container */
-    .video-container { position:relative; width:100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius:1rem; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,.15); }
-    .video-wrapper { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; }
-    .video-wrapper iframe, .video-wrapper video { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+    /* Progress bars */
+    .progress-bar{height:1rem;background:#e5e7eb;border-radius:9999px;overflow:hidden;border:1px solid #d1d5db;}
+    .progress-bar-fill{height:100%;background:#1B3776;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:600;color:#fff;}
 
-    /* Benefit callouts */
-    .benefit-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #1d4ed8; padding: 1rem 1.5rem; border-radius: .5rem; transition:.3s; }
-    .benefit-box:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(29,78,216,0.1); }
+    /* Benefit / feature boxes */
+    .benefit-box{background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%);border-left:4px solid #1B3776;padding:1rem 1.25rem;border-radius:.5rem;transition:.3s;}
+    .benefit-box:hover{transform:translateX(4px);box-shadow:0 4px 12px rgba(27,55,118,.15);}
 
     /* Confidential banner */
-    .confidential { position: sticky; top: 0; z-index: 50; background: #1B3776; color: #fff; padding: 8px 16px; text-align: center; font-weight: 700; letter-spacing: .06em; }
-    .confidential small { opacity: .85; font-weight: 500; }
+    .confidential{position:sticky;top:0;z-index:50;background:#1B3776;color:#fff;padding:8px 16px;text-align:center;font-weight:700;letter-spacing:.06em;font-size:.75rem;}
+    .confidential small{font-weight:500;opacity:.9;}
 
+    /* Section headings underline */
+    .section-heading{border-bottom:4px solid #1B3776;padding-bottom:.35rem;}
+
+    /* Cards */
+    .data-card{background:#ffffff;border:1px solid #e5e7eb;border-radius:1rem;padding:1.25rem;box-shadow:0 2px 4px rgba(0,0,0,.06);transition:.25s;}
+    .data-card:hover{box-shadow:0 6px 16px rgba(0,0,0,.12);}
+
+    /* Video wrappers */
+    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:.75rem;box-shadow:0 20px 40px rgba(0,0,0,.15);background:#0f172a;}
+    .video-wrapper video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;}
   </style>
 </head>
 <body class="bg-gray-100">
 
-  <!-- CONFIDENTIAL BANNER -->
+  <!-- CONFIDENTIAL -->
   <div class="confidential">
-    CONFIDENTIAL — Proprietary materials of Stewardship.IS, Inc. prepared for Arc57, LLC. <small>Do not copy or distribute.</small>
+    CONFIDENTIAL — Proprietary materials of Stewardship.IS, Inc. prepared exclusively for Arc57, LLC. <small>Do not copy or redistribute.</small>
   </div>
 
-  <div class="py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden">
+  <div class="py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto bg-white shadow-2xl rounded-xl overflow-hidden">
 
-      <!-- Header with Logos -->
+      <!-- Header -->
       <header class="p-8 sm:p-10 bg-white">
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-          <div class="mt-4 flex items-center gap-6">
-            <img src="assets/branding/stewardshipis-logo.png" alt="Stewardship.IS Logo" class="h-16 sm:h-20 w-auto">
-            <img src="assets/branding/arc57-logo.png" alt="Arc57, LLC Logo" class="h-20 sm:h-24 w-auto">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+          <div class="flex items-center gap-8">
+            <img src="assets/branding/stewardshipis-logo.png" alt="Stewardship.IS Logo" class="h-16 sm:h-20 w-auto" />
+            <img src="assets/branding/arc57-logo.png" alt="Arc57, LLC Logo" class="h-20 sm:h-24 w-auto" />
           </div>
         </div>
       </header>
 
-      <!-- Main Content -->
+      <!-- Main -->
       <main class="p-8 sm:p-10">
 
         <!-- Title -->
         <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-arc57-navy">
-          A New Multi‑Faceted, Dedicated, and Advantageous Partnership
+          A Multi‑Faceted, Dedicated & Advantageous Partnership
         </h1>
         <p class="mt-3 text-lg sm:text-xl text-gray-600">
-          Bespoke Solutions for Arc57, LLC
+          Bespoke Data, Automation, and Reporting Solutions for Arc57, LLC
         </p>
 
         <div class="border-t border-gray-200 my-6"></div>
 
-        <!-- Intro + Quick Navigation -->
-        <section class="mt-6" id="intro">
-          <p class="text-lg text-gray-700 leading-relaxed">
-            As Arc57, LLC advances its strategy, the operational, accounting, and reporting workload grows rapidly. Stewardship.IS provides a “done‑for‑you” operating model that removes the data grind, eliminates manual document processing, and equips your team with high‑impact analytics and reporting—without adding headcount.
-          </p>
+        <!-- Intro -->
+        <section id="intro" class="space-y-4 text-gray-700 leading-relaxed text-lg">
+          <p>Arc57’s operational & reporting workload compounds as assets scale. Stewardship.IS supplies a “done‑for‑you” model that ingests documents, normalizes data, automates variance detection, and produces Arc57‑branded stakeholder outputs—without adding internal headcount.</p>
+          <p>We shoulder the data engineering, document QC, and analytic processing so Arc57 can focus on strategy, A&D, and capital deployment.</p>
 
-          <div class="mt-8 mb-8" style="border-left: 4px solid #d1d5db; background-color: #f9fafb; padding: 20px 30px; border-radius: 8px;">
+          <!-- Quick Navigation -->
+          <div class="mt-8 mb-10 border-l-4 border-gray-300 bg-gray-50 p-6 rounded-lg">
             <h3 class="text-lg font-semibold text-gray-800 mb-3">Quick Navigation</h3>
-            <ul class="space-y-2 text-gray-700">
-              <li><a href="#portal-demo" class="hover:text-arc57-navy transition-colors">→ Minerals + Non‑op WI Portal Demo</a></li>
-              <li><a href="#pain-points" class="hover:text-arc57-navy transition-colors">→ Liberating Your Team from the Data Grind</a></li>
-              <li><a href="#solutions" class="hover:text-arc57-navy transition-colors">→ Our Partnership Solution: Your Operations Hub</a></li>
-              <li><a href="#sis-difference" class="hover:text-arc57-navy transition-colors">→ The S.IS Difference</a></li>
-              <li><a href="#example-1" class="hover:text-arc57-navy transition-colors">→ Example 1: Core Financial Analytics</a></li>
-              <li><a href="#example-2" class="hover:text-arc57-navy transition-colors">→ Example 2: Deduct Defender™ Case Study</a></li>
-              <li><a href="#example-3" class="hover:text-arc57-navy transition-colors">→ Example 3: Modules & Interfaces</a></li>
-              <li><a href="#example-4" class="hover:text-arc57-navy transition-colors">→ Example 4: Statements Management Tool</a></li>
-              <li><a href="#example-5" class="hover:text-arc57-navy transition-colors">→ Example 5: Custom Apps & Extensions</a></li>
+            <ul class="space-y-2 text-gray-700 text-sm md:text-base">
+              <li><a href="#portal-demo" class="hover:text-arc57-navy">→ Portal Demo (Minerals + Non‑Op WI)</a></li>
+              <li><a href="#pain-points" class="hover:text-arc57-navy">→ Core Pain Points We Remove</a></li>
+              <li><a href="#solutions" class="hover:text-arc57-navy">→ Partnership Solution Overview</a></li>
+              <li><a href="#sis-difference" class="hover:text-arc57-navy">→ The Stewardship.IS Difference</a></li>
+              <li><a href="#example-1" class="hover:text-arc57-navy">→ Example 1: Financial Analytics & Reporting</a></li>
+              <li><a href="#example-2" class="hover:text-arc57-navy">→ Example 2: Deduct Defender™ Case Study</a></li>
+              <li><a href="#example-3" class="hover:text-arc57-navy">→ Example 3: Modules & Interfaces Carousel</a></li>
+              <li><a href="#example-4" class="hover:text-arc57-navy">→ Example 4: Statements Management Tool</a></li>
+              <li><a href="#example-5" class="hover:text-arc57-navy">→ Example 5: Custom Apps & Extensions</a></li>
             </ul>
           </div>
-
-          <div style="border-top: 4px solid #1B3776; margin: 2rem 0;"></div>
-
-          <h2 class="text-3xl sm:text-4xl font-bold text-sis-dark mt-8 text-center" id="portal-demo">
-            <span class="text-arc57-navy">Stewardship.IS Minerals + Non‑Op WI Portal</span>
-          </h2>
-          <p class="text-xl text-center mt-2 text-gray-600">Basic Components Examples (including iPad views)</p>
-
-          <!-- Local HTML5 video (existing WebM) -->
-          <div class="video-wrapper mt-6">
-            <video width="100%" controls preload="metadata" poster="assets/slides/Slide-01.JPG" style="border-radius: 0.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15);" playsinline>
-              <source src="assets/video/Stewardship.IS_iPad-Config.webm" type="video/webm">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div style="border-top: 4px solid #1B3776; margin: 2rem 0;"></div>
         </section>
 
+        <!-- Portal Demo -->
+        <section id="portal-demo" class="mt-14">
+          <h2 class="text-3xl font-bold text-center text-sis-dark">
+            <span class="text-arc57-navy">Minerals + Non‑Op Working Interest Portal</span>
+          </h2>
+          <p class="text-center text-gray-600 mt-2 text-lg">Illustrative Components (including tablet layout)</p>
+
+          <div class="video-wrapper mt-8">
+            <video controls preload="metadata" playsinline poster="assets/slides/Slide-01.JPG">
+              <source src="assets/video/Stewardship.IS_iPad-Config.webm" type="video/webm">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+        </section>
+
+        <div class="my-12 border-t-4 border-arc57-navy"></div>
+
         <!-- Pain Points -->
-        <section class="mt-10" id="pain-points">
-          <h2 class="text-2xl font-semibold text-sis-dark tracking-tight">Liberating Your Team from the Data Grind</h2>
-          <p class="mt-2 text-lg text-gray-600">Key pain points we remove during growth and active operations:</p>
-          <ul class="mt-6 space-y-4">
+        <section id="pain-points">
+          <h2 class="text-2xl font-semibold text-sis-dark tracking-tight">Core Pain Points We Remove</h2>
+          <ul class="mt-6 space-y-5">
             <li class="flex items-start">
-              <svg class="flex-shrink-0 h-6 w-6 text-arc57-green mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span class="text-lg text-gray-700"><strong class="font-semibold">Data & System Silos:</strong> Difficulty tracking performance down to well/lease‑level; fragmented sources.</span>
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-arc57-green text-white flex items-center justify-center text-sm mt-1">1</span>
+              <p class="ml-3 text-gray-700"><strong>Data & System Silos:</strong> Fragmented well / lease level information and ad‑hoc spreadsheets slow decisions.</p>
             </li>
             <li class="flex items-start">
-              <svg class="flex-shrink-0 h-6 w-6 text-arc57-green mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span class="text-lg text-gray-700"><strong class="font-semibold">Manual Extraction:</strong> Costly, repetitive pulling from spreadsheets, PDFs, and portals.</span>
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-arc57-green text-white flex items-center justify-center text-sm mt-1">2</span>
+              <p class="ml-3 text-gray-700"><strong>Manual Document Intake:</strong> Statements, JIBs, AFEs, & revenue files require repetitive downloading, parsing, and formatting.</p>
             </li>
             <li class="flex items-start">
-              <svg class="flex-shrink-0 h-6 w-6 text-arc57-green mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span class="text-lg text-gray-700"><strong class="font-semibold">Stakeholder Reporting:</strong> Quarterly updates become a scramble without consistent pipelines.</span>
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-arc57-green text-white flex items-center justify-center text-sm mt-1">3</span>
+              <p class="ml-3 text-gray-700"><strong>Stakeholder Reporting Burden:</strong> Quarterly / monthly compilations consume internal time better spent on allocation & A&D.</p>
             </li>
             <li class="flex items-start">
-              <svg class="flex-shrink-0 h-6 w-6 text-arc57-green mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span class="text-lg text-gray-700"><strong class="font-semibold">Missed Revenue:</strong> Hard to detect deductions/variance patterns across operators and funds.</span>
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-arc57-green text-white flex items-center justify-center text-sm mt-1">4</span>
+              <p class="ml-3 text-gray-700"><strong>Missed Revenue & Variances:</strong> Over‑deductions and ownership discrepancies go undetected without systematic tracking.</p>
+            </li>
+            <li class="flex items-start">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-arc57-green text-white flex items-center justify-center text-sm mt-1">5</span>
+              <p class="ml-3 text-gray-700"><strong>Low Automation:</strong> Repetitive workflows (renaming, quarantining duplicates, cross‑file search) waste time and introduce errors.</p>
             </li>
           </ul>
         </section>
 
-        <div class="border-t border-gray-200 my-10"></div>
+        <div class="my-12 border-t-4 border-arc57-navy"></div>
 
         <!-- Solutions -->
-        <section class="mt-12" id="solutions">
-          <h2 class="text-2xl font-semibold text-sis-dark tracking-tight">Our Partnership Solution: Your Operations Hub</h2>
-          <div class="mt-8 space-y-8">
-            <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-              <div class="flex items-center">
-                <svg class="ph-icon flex-shrink-0 h-8 w-8 text-arc57-navy mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M40 200V56a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8v144m0 0H40m0 0v-8m20-24V88m40 88V128m40 40v-40m40 40v-88" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
-                <h3 class="text-xl font-semibold text-gray-900">Arc57‑Branded Executive, Fund, & Stakeholder Reporting</h3>
-              </div>
-              <p class="mt-3 text-lg text-gray-700">
-                Custom monthly/quarterly exports, newsletters, and board‑ready visuals—delivered without adding internal workload.
-              </p>
+        <section id="solutions">
+          <h2 class="text-2xl font-semibold text-sis-dark tracking-tight">Partnership Solution: Your Operations Hub</h2>
+          <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="data-card">
+              <h3 class="text-xl font-semibold text-gray-900">Arc57‑Branded Executive & Stakeholder Reporting</h3>
+              <p class="mt-2 text-gray-700 text-sm md:text-base">Packaged dashboards, variance snapshots, board‑ready PDF/slide decks, and investor exports—delivered on cadence.</p>
             </div>
-
-            <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-              <div class="flex items-center">
-                <svg class="ph-icon flex-shrink-0 h-8 w-8 text-arc57-navy mr-4" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M216 88v120a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8V48a8 8 0 0 1 8-8h104m64 48a8 8 0 0 0-8-8h-26.34a8 8 0 0 0-5.66 2.34L136 120m50.34-31.66L136 136l-20-20m-8 40a8 8 0 0 0 8 8h72" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
-                <h3 class="text-xl font-semibold text-gray-900">Automated Data & Document Processing</h3>
-              </div>
-              <p class="mt-3 text-lg text-gray-700">We ingest revenue/AFE/opex/capex and normalize documents across sources for a single source of truth.</p>
+            <div class="data-card">
+              <h3 class="text-xl font-semibold text-gray-900">Automated Data & Document Processing</h3>
+              <p class="mt-2 text-gray-700 text-sm md:text-base">Ingest revenue, JIB, AFE, opex/capex, and ownership data; unify across operators and formats with audit trails.</p>
             </div>
-
-            <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-              <div class="flex items-center">
-                <svg class="ph-icon flex-shrink-0 h-8 w-8 text-arc57-navy mr-4" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="48" width="176" height="160" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="80" y1="80" x2="176" y2="80" stroke="currentColor" stroke-width="16"/><line x1="80" y1="120" x2="96" y2="120" stroke="currentColor" stroke-width="16"/><line x1="120" y1="120" x2="136" y2="120" stroke="currentColor" stroke-width="16"/></svg>
-                <h3 class="text-xl font-semibold text-gray-900">Seamless Non‑Op, A&D Evaluation, & Accounting Integration</h3>
-              </div>
-              <p class="mt-3 text-lg text-gray-700">Well‑level revenue/expense tracking, variance detection, and drill‑downs aligned to Arc57 workflows.</p>
+            <div class="data-card">
+              <h3 class="text-xl font-semibold text-gray-900">Non‑Op & A&D Integration</h3>
+              <p class="mt-2 text-gray-700 text-sm md:text-base">Well‑level economics, AFEs vs paid, IRR tracking; quick ranking for divest / workover / capitalize decisions.</p>
             </div>
-
-            <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-              <div class="flex items-center">
-                <svg class="ph-icon flex-shrink-0 h-8 w-8 text-arc57-navy mr-4" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M128 24a96 96 0 0 0-96 96c0 74.4 78.6 112.5 90.9 117.8a8 8 0 0 0 6.2 0c12.3-5.3 90.9-43.4 90.9-117.8a96 96 0 0 0-96-96Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
-                <h3 class="text-xl font-semibold text-gray-900">Proactive Revenue Recoupment (Deduct Defender™)</h3>
-              </div>
-              <p class="mt-3 text-lg text-gray-700">Detects over‑deductions and missing revenues; produces operator‑ready packets to pursue recoupments.</p>
+            <div class="data-card">
+              <h3 class="text-xl font-semibold text-gray-900">Deduct Defender™ Revenue Recoupment</h3>
+              <p class="mt-2 text-gray-700 text-sm md:text-base">Active variance algorithms surface over‑deductions and missing proceeds; operator‑ready packet output.</p>
+            </div>
+            <div class="data-card">
+              <h3 class="text-xl font-semibold text-gray-900">Single Source of Truth</h3>
+              <p class="mt-2 text-gray-700 text-sm md:text-base">Unified normalized dataset; eliminates version drift between spreadsheets & systems.</p>
+            </div>
+            <div class="data-card">
+              <h3 class="text-xl font-semibold text-gray-900">Rapid Custom Apps & Extensions</h3>
+              <p class="mt-2 text-gray-700 text-sm md:text-base">Browser extensions, internal tools, scripting automations—days not months.</p>
             </div>
           </div>
         </section>
 
-        <!-- The S.IS Difference -->
-        <section class="mt-12 bg-sis-dark text-white p-8 rounded-lg" id="sis-difference">
-          <h2 class="text-2xl font-semibold tracking-tight">The S.IS Difference</h2>
-          <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div><h4 class="text-lg font-semibold text-arc57-green">Premium Support, Fair Price</h4><p class="mt-1 text-gray-200">Month‑to‑month flexibility; we host, maintain, and secure the platform.</p></div>
-            <div><h4 class="text-lg font-semibold text-arc57-green">Zero IT Overhead</h4><p class="mt-1 text-gray-200">No software to install, no servers to manage, and no internal dev required.</p></div>
-            <div><h4 class="text-lg font-semibold text-arc57-green">Customized & Flexible</h4><p class="mt-1 text-gray-200">We adapt to your workflow: import exhibits, custom tags, shapefiles, and more.</p></div>
+        <!-- Difference -->
+        <section id="sis-difference" class="mt-14 bg-sis-dark text-white p-8 rounded-xl">
+          <h2 class="text-2xl font-semibold tracking-tight">The Stewardship.IS Difference</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+            <div>
+              <h4 class="font-semibold text-arc57-green">Premium Support, Fair Price</h4>
+              <p class="text-gray-200 mt-1 text-sm">Month‑to‑month flexibility. We operate as a partner, not a detached SaaS vendor.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-arc57-green">Zero IT Overhead</h4>
+              <p class="text-gray-200 mt-1 text-sm">Hosted infrastructure & updates—no servers, patch cycles, or installs for your team.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-arc57-green">Customization Velocity</h4>
+              <p class="text-gray-200 mt-1 text-sm">We adapt imports, tag schemas, map layers, & workflows to Arc57’s operating rhythm rapidly.</p>
+            </div>
           </div>
         </section>
 
-        <!-- Example 1: Core Financial Analytics -->
-        <section class="mt-12" id="example-1">
-          <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-arc57-navy pb-2">Example 1: Core Financial Analytics & Reporting</h2>
-          <p class="mt-4 text-lg text-gray-700">Scrubbed examples of the basic analytics we can deploy quickly.</p>
+        <!-- Example 1 -->
+        <section id="example-1" class="mt-14">
+          <h2 class="text-3xl font-bold text-sis-dark section-heading">Example 1: Core Financial Analytics & Reporting</h2>
+          <p class="mt-4 text-lg text-gray-700">Scrubbed illustrations of baseline dashboards & AFE/return tracking we can deploy quickly.</p>
 
-          <div class="mt-8 bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-            <h3 class="text-xl font-semibold text-gray-900">AFE Budget Tracker (Arc57 Fund I – Active)</h3>
-            <!-- (table kept from your current version) -->
-          </div>
+          <!-- AFE Budget Tracker -->
+            <div class="mt-8 bg-white p-6 rounded-xl shadow-md border border-gray-200">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">AFE Budget Tracker (Arc57 Fund I – Active)</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Gauge -->
+                <div class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg">
+                  <h4 class="text-sm font-medium text-gray-700 mb-2">Total AFEs Paid vs. Budget</h4>
+                  <svg viewBox="0 0 100 75" class="w-full max-w-xs">
+                    <path d="M 10 50 A 40 40 0 1 1 90 50" fill="none" stroke="#d1d5db" stroke-width="8" stroke-linecap="round"></path>
+                    <path d="M 10 50 A 40 40 0 1 1 90 50" fill="none" stroke="#1B3776" stroke-width="8" stroke-linecap="round" stroke-dasharray="125.66" stroke-dashoffset="31.415"></path>
+                    <text x="50" y="62" text-anchor="middle" font-size="20" font-weight="700" fill="#1B3776">75%</text>
+                    <text x="50" y="74" text-anchor="middle" font-size="9" fill="#374151">
+                      <tspan font-weight="600">$150M Paid</tspan> / $200M Budget
+                    </text>
+                  </svg>
+                </div>
+                <!-- AFE Table -->
+                <div class="md:col-span-2 overflow-x-auto">
+                  <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-gray-50">
+                      <tr>
+                        <th class="px-3 py-2 text-left font-semibold text-gray-600">AFE</th>
+                        <th class="px-3 py-2 text-left font-semibold text-gray-600">Net AFE ($)</th>
+                        <th class="px-3 py-2 text-left font-semibold text-gray-600">Progress</th>
+                        <th class="px-3 py-2 text-left font-semibold text-gray-600">Projection</th>
+                      </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-100">
+                      <tr>
+                        <td class="px-3 py-3">Wolf 1H (DC&I)</td>
+                        <td class="px-3 py-3">$1.2M</td>
+                        <td class="px-3 py-3"><div class="progress-bar"><div class="progress-bar-fill" style="width:80%">80%</div></div></td>
+                        <td class="px-3 py-3 text-green-600 font-medium">Under (5%)</td>
+                      </tr>
+                      <tr>
+                        <td class="px-3 py-3">Starr 2 (DC&I)</td>
+                        <td class="px-3 py-3">$2.5M</td>
+                        <td class="px-3 py-3"><div class="progress-bar"><div class="progress-bar-fill" style="width:100%">100%</div></div></td>
+                        <td class="px-3 py-3 text-green-600 font-medium">Paid - Under (2%)</td>
+                      </tr>
+                      <tr>
+                        <td class="px-3 py-3">R-3 Prod Facility</td>
+                        <td class="px-3 py-3">$0.8M</td>
+                        <td class="px-3 py-3"><div class="progress-bar"><div class="progress-bar-fill" style="width:60%">60%</div></div></td>
+                        <td class="px-3 py-3 text-gray-600">On Target</td>
+                      </tr>
+                      <tr>
+                        <td class="px-3 py-3">Eagle 3H (DC&I)</td>
+                        <td class="px-3 py-3">$1.5M</td>
+                        <td class="px-3 py-3"><div class="progress-bar"><div class="progress-bar-fill" style="width:95%">95%</div></div></td>
+                        <td class="px-3 py-3 text-red-600 font-medium">Over (3%)</td>
+                      </tr>
+                      <tr>
+                        <td class="px-3 py-3">King 1 (Recomplete)</td>
+                        <td class="px-3 py-3">$0.5M</td>
+                        <td class="px-3 py-3"><div class="progress-bar"><div class="progress-bar-fill" style="width:20%">20%</div></div></td>
+                        <td class="px-3 py-3 text-gray-600">On Target</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
 
-          <div class="mt-6 bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-            <h3 class="text-xl font-semibold text-gray-900">Well‑Level Returns & A&D Analysis</h3>
-            <!-- (table kept from your current version) -->
+          <!-- Well-Level Returns -->
+          <div class="mt-8 bg-white p-6 rounded-xl shadow-md border border-gray-200">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Well‑Level Returns & A&D Analysis</h3>
+            <p class="text-sm text-gray-500 mb-4">Rapid opportunity ranking for divest, workover, or additional capital allocation.</p>
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-200 text-sm">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-600">Asset / Well</th>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-600">IRR To Date (%)</th>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-600">ROI (x)</th>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-600">Arc57 Allocated Value ($)</th>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-600">Opportunity</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-100">
+                  <tr><td class="px-4 py-3">Red River 1‑H</td><td class="px-4 py-3">18.5%</td><td class="px-4 py-3">1.8x</td><td class="px-4 py-3">$65,000</td><td class="px-4 py-3 text-red-600 font-semibold">Divest Candidate</td></tr>
+                  <tr><td class="px-4 py-3">Mustang Ridge 5‑C</td><td class="px-4 py-3">35.2%</td><td class="px-4 py-3">3.1x</td><td class="px-4 py-3">$71,500</td><td class="px-4 py-3 text-green-600 font-semibold">Top Quartile</td></tr>
+                  <tr><td class="px-4 py-3">Bluebonnet 2B</td><td class="px-4 py-3">22.0%</td><td class="px-4 py-3">2.1x</td><td class="px-4 py-3">$58,000</td><td class="px-4 py-3 text-gray-700">On Target</td></tr>
+                  <tr><td class="px-4 py-3">Gunsight 1A (Non‑Op)</td><td class="px-4 py-3">28.0%</td><td class="px-4 py-3">2.5x</td><td class="px-4 py-3">$42,000</td><td class="px-4 py-3 text-green-600 font-semibold">Exceeding Type Curve</td></tr>
+                  <tr><td class="px-4 py-3">Pecos 8H</td><td class="px-4 py-3">15.0%</td><td class="px-4 py-3">1.5x</td><td class="px-4 py-3">$75,000</td><td class="px-4 py-3 text-red-600 font-semibold">Workover Candidate</td></tr>
+                  <tr><td class="px-4 py-3">Midland Unit 1</td><td class="px-4 py-3">24.5%</td><td class="px-4 py-3">2.2x</td><td class="px-4 py-3">$55,000</td><td class="px-4 py-3 text-gray-700">On Target</td></tr>
+                  <tr><td class="px-4 py-3">Wolfcamp 33A</td><td class="px-4 py-3">40.1%</td><td class="px-4 py-3">3.8x</td><td class="px-4 py-3">$74,000</td><td class="px-4 py-3 text-green-600 font-semibold">Top Performer</td></tr>
+                  <tr><td class="px-4 py-3">Reeves 5 (Non‑Op)</td><td class="px-4 py-3">12.0%</td><td class="px-4 py-3">1.2x</td><td class="px-4 py-3">$51,500</td><td class="px-4 py-3 text-red-600 font-semibold">Divest Candidate</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
 
-        <!-- Example 2: Deduct Defender -->
-        <section class="mt-12" id="example-2">
-          <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-arc57-navy pb-2">Example 2: Deduct Defender™ Revenue Recoupment Case Study</h2>
-          <!-- (keep your body copy; Arc57 wording can be refined later) -->
+        <!-- Example 2 Deduct Defender -->
+        <section id="example-2" class="mt-14">
+          <h2 class="text-3xl font-bold text-sis-dark section-heading">Example 2: Deduct Defender™ Revenue Recoupment Case Study</h2>
+          <p class="mt-4 text-lg text-gray-700">Illustrative scenario showing detection of over‑deductions & missing revenue streams using subset algorithms.</p>
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="p-6 rounded-xl shadow-md border border-red-300 bg-red-50">
+              <h3 class="text-xl font-bold text-red-700 mb-4">Problem</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+                <li>Incorrect compression / fuel deduction rates applied vs lease provisions.</li>
+                <li>Initial undetected over‑deduction: ~1.1% gross monthly revenue.</li>
+                <li>Partial algorithm pass identified missing revenues totaling 8.5% across selected wells.</li>
+                <li>Exposure: $25,000 per month across a focused subset of assets.</li>
+              </ul>
+            </div>
+            <div class="p-6 rounded-xl shadow-md border border-green-300 bg-green-50">
+              <h3 class="text-xl font-bold text-green-700 mb-4">Recoupment</h3>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <p class="text-sm text-gray-500">Historical 6‑Month Recaptured:</p>
+                <p class="text-3xl font-extrabold text-sis-dark">$152,377</p>
+                <p class="text-sm text-green-700 font-semibold mt-2">Estimated Annualized IRR Uplift: +6.4%</p>
+              </div>
+              <p class="mt-4 text-sm text-gray-700">Operator‑ready packet generated with variance evidence & corrected deduction basis.</p>
+            </div>
+          </div>
         </section>
 
-        <!-- Example 3: Modules & Interfaces Carousel -->
-        <section class="mt-12" id="example-3">
-          <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-arc57-navy pb-2">Example 3: S.IS Modules & Interfaces</h2>
+        <!-- Example 3 Carousel -->
+        <section id="example-3" class="mt-14">
+          <h2 class="text-3xl font-bold text-sis-dark section-heading">Example 3: S.IS Modules & Interfaces Carousel</h2>
+          <p class="mt-4 text-lg text-gray-700">Swipe through a scrubbed sequence of interface/module concepts adaptable to Arc57 branding.</p>
           <div class="mt-8">
-            <div class="carousel-container bg-gray-50 p-8 rounded-xl shadow-lg">
+            <div class="carousel-container bg-gray-50 p-6 sm:p-8 rounded-xl shadow-lg">
               <div class="carousel-track" id="carouselTrack"></div>
               <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous slide">
                 <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
@@ -252,95 +363,109 @@
           </div>
         </section>
 
-        <!-- Example 4: Statements Management Tool (local video instead of Vimeo) -->
-        <section class="mt-12" id="example-4">
-          <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-arc57-navy pb-2">
-            Example 4: VS Code‑Based Statements Management Tool
-          </h2>
-          <p class="mt-4 text-lg text-gray-700">Document QC, duplicate quarantine, and deep content search across massive nested folders.</p>
+        <!-- Example 4 Statements Tool -->
+        <section id="example-4" class="mt-14">
+          <h2 class="text-3xl font-bold text-sis-dark section-heading">Example 4: VS Code‑Based Statements Management Tool</h2>
+          <p class="mt-4 text-lg text-gray-700">Duplicate detection, deep content search, and quarantine flow for nested folders—translated into plain English prompts.</p>
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="benefit-box">
+              <h4 class="font-semibold text-gray-900 text-lg">Identifies All Duplicates</h4>
+              <p class="mt-1 text-gray-700 text-sm">Metadata hash matching—even across renamed files & deep folder trees.</p>
+            </div>
+            <div class="benefit-box">
+              <h4 class="font-semibold text-gray-900 text-lg">Smart Quarantine Workflow</h4>
+              <p class="mt-1 text-gray-700 text-sm">Interactive prompts to keep newest, oldest, or isolate suspicious duplicates.</p>
+            </div>
+            <div class="benefit-box">
+              <h4 class="font-semibold text-gray-900 text-lg">Deep Content Search</h4>
+              <p class="mt-1 text-gray-700 text-sm">Searches internal cell components and nested workbook structures.</p>
+            </div>
+            <div class="benefit-box">
+              <h4 class="font-semibold text-gray-900 text-lg">Flexible Follow‑Up Actions</h4>
+              <p class="mt-1 text-gray-700 text-sm">Move, quarantine, tag, or bulk rename in controlled batches.</p>
+            </div>
+          </div>
+          <div class="video-wrapper mt-10">
+            <video controls preload="metadata" playsinline poster="assets/slides/Slide-02.JPG">
+              <source src="assets/video/Stewardship.IS_iPad-Config.webm" type="video/webm">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+        </section>
 
-          <div class="video-container mt-6">
-            <div class="video-wrapper">
-              <!-- Using the same local WebM for now. Replace src with your own demo if desired. -->
-              <video controls preload="metadata" playsinline poster="assets/slides/Slide-02.JPG">
-                <source src="assets/video/Stewardship.IS_iPad-Config.webm" type="video/webm">
-                Your browser does not support HTML5 video.
-              </video>
+        <!-- Example 5 Custom Apps -->
+        <section id="example-5" class="mt-14">
+          <h2 class="text-3xl font-bold text-sis-dark section-heading">Example 5: Rapid Custom Applications & Extensions</h2>
+          <p class="mt-4 text-lg text-gray-700">Browser extensions & lightweight internal apps accelerate repetitive processes (e.g. manual portal navigation, batch exports, structured transforms).</p>
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 shadow-sm">
+              <h4 class="text-lg font-bold text-gray-900 mb-2 text-center">Quickly Built</h4>
+              <p class="text-sm text-gray-700 text-center">Solutions in days (sometimes hours) rather than quarters.</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200 shadow-sm">
+              <h4 class="text-lg font-bold text-gray-900 mb-2 text-center">Tailored to Each User</h4>
+              <p class="text-sm text-gray-700 text-center">Interfaces match Arc57 staff workflow & naming conventions.</p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200 shadow-sm">
+              <h4 class="text-lg font-bold text-gray-900 mb-2 text-center">Time Savings</h4>
+              <p class="text-sm text-gray-700 text-center">Hours reclaimed weekly via automation of “simple but constant” tasks.</p>
             </div>
           </div>
         </section>
 
-        <!-- Example 5: Custom Applications -->
-        <section class="mt-12" id="example-5">
-          <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-arc57-navy pb-2">
-            Example 5: Quick Customized Applications & Extensions
-          </h2>
-          <!-- (keep your existing content) -->
-        </section>
-
         <!-- Moving Forward -->
-        <section class="mt-12">
+        <section class="mt-16">
           <h2 class="text-2xl font-semibold text-sis-dark tracking-tight">Moving Forward</h2>
-          <p class="mt-4 text-lg text-gray-700">We’re ready to deploy a branded Arc57 portal quickly, tuned for your data, documents, and reporting cadence.</p>
+          <p class="mt-4 text-lg text-gray-700">Arc57 can immediately leverage automated document intake, structured analytics, and branded reporting with minimal lift. Next steps: finalize scope; ingest initial dataset; schedule rollout toward a unified portal launch.</p>
         </section>
 
       </main>
 
       <!-- Footer -->
       <footer class="p-8 bg-gray-50 border-t border-gray-200">
-        <p class="text-center text-sm text-gray-500">
+        <p class="text-center text-xs sm:text-sm text-gray-500">
           Stewardship.IS, Inc. © 2025 | Confidential Proposal Prepared for Arc57, LLC
         </p>
       </footer>
-
     </div>
   </div>
 
-  <!-- Carousel JS -->
+  <!-- Carousel Script -->
   <script>
-    const slideImages = [
-      'assets/slides/Slide-01.JPG','assets/slides/Slide-02.JPG','assets/slides/Slide-03.JPG','assets/slides/Slide-04.JPG','assets/slides/Slide-05.JPG',
-      'assets/slides/Slide-06.JPG','assets/slides/Slide-07.JPG','assets/slides/Slide-08.JPG','assets/slides/Slide-09.JPG','assets/slides/Slide-10.JPG',
-      'assets/slides/Slide-11.JPG','assets/slides/Slide-12.JPG','assets/slides/Slide-13.JPG','assets/slides/Slide-14.JPG','assets/slides/Slide-15.JPG',
-      'assets/slides/Slide-16.JPG','assets/slides/Slide-17.JPG','assets/slides/Slide-18.JPG','assets/slides/Slide-19.JPG','assets/slides/Slide-20.JPG',
-      'assets/slides/Slide-21.JPG','assets/slides/Slide-22.JPG','assets/slides/Slide-23.JPG','assets/slides/Slide-24.JPG','assets/slides/Slide-25.JPG'
-    ];
-    let currentSlide = 0;
-    const track = document.getElementById('carouselTrack');
-    const dotsContainer = document.getElementById('carouselDots');
-    const counter = document.getElementById('carouselCounter');
+    const slideImages = Array.from({length:25},(_,i)=>`assets/slides/Slide-${String(i+1).padStart(2,'0')}.JPG`);
+    let currentSlide=0;
+    const track=document.getElementById('carouselTrack');
+    const dotsContainer=document.getElementById('carouselDots');
+    const counter=document.getElementById('carouselCounter');
 
-    slideImages.forEach((src, index) => {
-      const slide = document.createElement('div');
-      slide.className = `carousel-slide ${index===0?'active':''}`;
-      slide.innerHTML = `<img src="${src}" alt="Slide ${index+1}" loading="lazy">`;
-      track.appendChild(slide);
-
-      const dot = document.createElement('div');
-      dot.className = `carousel-dot ${index===0?'active':''}`;
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
+    // Build slides & dots
+    slideImages.forEach((src,i)=>{
+      const s=document.createElement('div');
+      s.className=`carousel-slide ${i===0?'active':''}`;
+      s.innerHTML=`<img src="${src}" alt="Carousel Slide ${i+1}" loading="lazy">`;
+      track.appendChild(s);
+      const d=document.createElement('div');
+      d.className=`carousel-dot ${i===0?'active':''}`;
+      d.addEventListener('click',()=>goToSlide(i));
+      dotsContainer.appendChild(d);
     });
 
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
+    const slides=[...document.querySelectorAll('.carousel-slide')];
+    const dots=[...document.querySelectorAll('.carousel-dot')];
 
-    document.querySelector('.carousel-btn-prev').addEventListener('click', () => changeSlide(-1));
-    document.querySelector('.carousel-btn-next').addEventListener('click', () => changeSlide(1));
+    document.getElementById('prevBtn').addEventListener('click',()=>changeSlide(-1));
+    document.getElementById('nextBtn').addEventListener('click',()=>changeSlide(1));
 
     function changeSlide(delta){
-      currentSlide = (currentSlide + delta + slides.length) % slides.length;
-      updateCarousel();
+      currentSlide=(currentSlide+delta+slides.length)%slides.length;
+      update();
     }
-    function goToSlide(index){
-      currentSlide = index;
-      updateCarousel();
-    }
-    function updateCarousel(){
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
-      slides.forEach((s,i)=>s.classList.toggle('active', i===currentSlide));
-      dots.forEach((d,i)=>d.classList.toggle('active', i===currentSlide));
-      counter.textContent = `${currentSlide+1} / ${slides.length}`;
+    function goToSlide(i){currentSlide=i;update();}
+    function update(){
+      track.style.transform=`translateX(-${currentSlide*100}%)`;
+      slides.forEach((sl,i)=>sl.classList.toggle('active',i===currentSlide));
+      dots.forEach((dt,i)=>dt.classList.toggle('active',i===currentSlide));
+      counter.textContent=`${currentSlide+1} / ${slides.length}`;
     }
   </script>
 </body>
