@@ -103,7 +103,7 @@
 
         <div style="border-top:4px solid #1d4ed8;margin:2rem 0;"></div>
 
-        <!-- Video 1: Portal Demo -->
+        <!-- Video 1: Portal Demo (local video with dynamic poster) -->
         <h2 class="text-3xl sm:text-4xl font-bold text-sis-dark mt-8 text-center" id="portal-demo"><strong style="color:#1d4ed8;">Stewardship.IS's Minerals + Non‑op WI Portal</strong></h2>
         <p class="text-xl text-center mt-2 text-gray-600">Basic Components Examples (including iPad views)</p>
         <div class="video-wrapper mt-6">
@@ -194,7 +194,7 @@
         </div>
       </section>
 
-      <!-- Example 1 (full content restored) -->
+      <!-- Example 1 (full) -->
       <section class="mt-12" id="example-1">
         <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">Example 1: Core Financial Analytics & Reporting</h2>
         <p class="mt-4 text-lg text-gray-700">Below are scrubbed examples of the type of custom dashboards and high‑impact metrics we provide.</p>
@@ -208,8 +208,8 @@
               <h4 class="text-lg font-medium text-gray-700 whitespace-nowrap">Total AFEs Paid vs. Budget</h4>
               <div class="flex items-center justify-center h-28 relative w-full max-w-xs">
                 <svg class="w-full h-full" viewBox="0 0 100 75">
-                  <path d="M 10 50 A 40 40 0 1 1 90 50" fill="none" class="gauge-ring-bg" stroke-width="8" stroke-linecap="round"/>
-                  <path d="M 10 50 A 40 40 0 1 1 90 50" fill="none" class="gauge-ring-progress" stroke-width="8" stroke-linecap="round"/>
+                  <path d="M 10 50 A 40 40 0 1 1 90 50" fill="none" class="gauge-ring-bg" stroke-width="8" stroke-linecap="round"></path>
+                  <path d="M 10 50 A 40 40 0 1 1 90 50" fill="none" class="gauge-ring-progress" stroke-width="8" stroke-linecap="round"></path>
                   <text x="50" y="62" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#1f2937">75%</text>
                   <text x="50" y="74" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#4b5563"><tspan font-weight="600" fill="#1f2937">$150M Paid</tspan> / $200M Allotted</text>
                 </svg>
@@ -269,13 +269,12 @@
         </div>
       </section>
 
-      <!-- Example 2 (added back) -->
+      <!-- Example 2 -->
       <section class="mt-12" id="example-2">
         <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">Example 2: Deduct Defender™ Revenue Recoupment Case Study</h2>
         <p class="mt-4 text-lg text-gray-700">Illustrative scenario showing detection of over‑deductions and missing revenue streams using subset algorithms.</p>
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Problem -->
           <div class="p-6 rounded-xl shadow-lg border border-red-300 bg-red-50">
             <div class="flex items-center mb-4">
               <span class="text-3xl font-bold text-red-700 mr-3">Problem</span>
@@ -289,7 +288,6 @@
               <li><strong>Exposure:</strong> ~$25,000 per month across a focused subset of assets.</li>
             </ul>
           </div>
-          <!-- Recoupment -->
           <div class="p-6 rounded-xl shadow-lg border border-green-300 bg-green-50">
             <div class="flex items-center mb-4">
               <span class="text-3xl font-bold text-green-700 mr-3">Recoupment</span>
@@ -320,21 +318,24 @@
         </div>
       </section>
 
-      <!-- Example 4: Statements Tool (Video 2; poster from first frame) -->
+      <!-- Example 4: Statements Tool (Vimeo embed restored) -->
       <section class="mt-12" id="example-4">
         <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">Example 4: VS Code Statements Management Tool</h2>
         <p class="mt-4 text-lg text-gray-700">Duplicate QC, deep content search, and quarantine workflows for massive nested folders.</p>
+
         <div class="video-container mt-6">
           <div class="video-wrapper">
-            <video controls playsinline preload="metadata" data-poster-from-first-frame>
-              <source src="assets/video/Stewardship.IS_iPad-Config.webm" type="video/webm">
-              Your browser does not support HTML5 video.
-            </video>
+            <iframe
+              src="https://player.vimeo.com/video/1134402759?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              title="Proposal - Example 4 - Document QC Tool">
+            </iframe>
           </div>
         </div>
       </section>
 
-      <!-- Example 5 (kept light) -->
+      <!-- Example 5 -->
       <section class="mt-12" id="example-5">
         <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">Example 5: Quick Customized Applications & Extensions</h2>
         <p class="mt-4 text-lg text-gray-700">Targeted extensions and internal tools accelerate repetitive processes and reclaim weekly hours.</p>
@@ -352,6 +353,9 @@
     </footer>
   </div>
 
+  <!-- Vimeo API (optional) -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
   <!-- Carousel + dynamic video poster scripts -->
   <script>
     // Build carousel (25 slides)
@@ -366,7 +370,7 @@
       function upd(){track.style.transform=`translateX(-${cur*100}%)`; slides.forEach((s,i)=>s.classList.toggle('active',i===cur)); dots.forEach((d,i)=>d.classList.toggle('active',i===cur)); counter.textContent=`${cur+1} / ${slides.length}`;}
     }
 
-    // Poster = first frame for any video with data-poster-from-first-frame
+    // Poster = first frame for any local video with data-poster-from-first-frame
     function setPosterFromFirstFrame(video){
       const seek=0.1; // avoid black frame
       const capture=()=>{ try{ const c=document.createElement('canvas'); c.width=video.videoWidth||1280; c.height=video.videoHeight||720; const x=c.getContext('2d'); x.drawImage(video,0,0,c.width,c.height); const data=c.toDataURL('image/jpeg',0.85); video.setAttribute('poster',data); }catch(e){} video.pause(); video.currentTime=0; };
